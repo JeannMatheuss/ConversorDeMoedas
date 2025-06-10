@@ -11,7 +11,8 @@ public class ExchangeRateService {
     private static final String BASE_URL = "https://v6.exchangerate-api.com/v6/";
 
     public String obterDados(String moedaBase) throws IOException, InterruptedException {
-        String endpoint = BASE_URL + API_KEY + moedaBase;
+        String endpoint = BASE_URL + API_KEY + "/latest/" + moedaBase;
+
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
